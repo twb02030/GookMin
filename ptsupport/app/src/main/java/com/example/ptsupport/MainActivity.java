@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle b) {
         super.onCreate(b);
+        //시작시 바로 센서리스너 불러옴, 메인 프래그먼트 띄움
         startService(new Intent(this, SensorListener.class));
         if (b == null) {
             Uifragment uifragment = new Uifragment();
@@ -37,12 +38,13 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
+        //액션바 감춤
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
     }
 
     public void settingsbutton(View view){
-        Intent intent = new Intent(getApplicationContext(), Settings.class);
+        Intent intent = new Intent(getApplicationContext(), result.class);
         startActivity(intent);
     }
 }
