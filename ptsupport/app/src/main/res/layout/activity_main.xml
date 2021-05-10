@@ -16,6 +16,9 @@
             android:id="@+id/topBar"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:background="@color/tab_tab2"
+            app:bb_activeTabColor="#385D6E"
+            app:bb_inActiveTabColor="#FFFFFF"
             app:bb_tabXmlResource="@xml/topbar_tabs" />
     </FrameLayout>
 

@@ -1141,8 +1141,10 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color gainsboro
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color lightgrey
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1244,6 +1246,7 @@ color purple_200
 color purple_500
 color purple_700
 color radiobutton_themeable_attribute_color
+color red_01
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -1256,6 +1259,8 @@ color switch_thumb_material_dark
 color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
+color tab_tab1
+color tab_tab2
 color teal_200
 color teal_700
 color test_mtrl_calendar_day
@@ -1753,6 +1758,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable b2_cl
 drawable bb_bottom_bar_top_shadow
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -1762,12 +1768,18 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable button_design
+drawable button_design_2
+drawable button_design_3
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable hom_1
+drawable hom_2
+drawable hom_3
 drawable ic_arrow_down_24dp
 drawable ic_bar_chart_black_24dp
 drawable ic_clock_black_24dp
@@ -1799,6 +1811,7 @@ drawable mtrl_ic_error
 drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_dark
 drawable mtrl_tabs_default_indicator
+drawable n1
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -1843,7 +1856,6 @@ id Stepcount
 id Stopsign
 id TOP_END
 id TOP_START
-id Title
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2030,6 +2042,9 @@ id hideable
 id home
 id homeAsUp
 id honorRequest
+id ic_kcal
+id ic_km
+id ic_per
 id icon
 id icon_frame
 id icon_group
@@ -2038,8 +2053,8 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id include
 id include_layout
+id include_walkway
 id info
 id invisible
 id inward
@@ -2283,6 +2298,8 @@ id useLogo
 id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag
+id walk_circle
+id walk_circle_layout
 id withText
 id withinBounds
 id wrap

@@ -7,11 +7,13 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -25,6 +27,7 @@ public class HomeFragment extends Fragment implements SensorEventListener {
     static int DEFAULT_GOAL = 10000;
     TextView titleView, stepcountView, kmcountView, kcalcountView, percentcountView, stopsignView;
     int todayOffset, since_boot, total_start, total_days, goal, steps_today;
+    ImageView ic_km, ic_per, ic_kcal;
     private boolean checknowSteps = false;
 
     public final static NumberFormat formatter = NumberFormat.getInstance(Locale.getDefault());
@@ -43,12 +46,17 @@ public class HomeFragment extends Fragment implements SensorEventListener {
     //v.findViewById
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home, null);
-        titleView = (TextView) v.findViewById(R.id.Title);
+        // titleView = (TextView) v.findViewById(R.id.Title);
         stepcountView = (TextView) v.findViewById(R.id.Stepcount);
         kmcountView = (TextView) v.findViewById(R.id.Kmcount);
         kcalcountView = (TextView) v.findViewById(R.id.Kcalcount);
         percentcountView = (TextView) v.findViewById(R.id.percentcount);
         stopsignView = (TextView) v.findViewById(R.id.Stopsign);
+
+        ic_km = (ImageView) v.findViewById(R.id.ic_km);
+        ic_kcal = (ImageView) v.findViewById(R.id.ic_kcal);
+        ic_per = (ImageView) v.findViewById(R.id.ic_per);
+
         Button startstopButton = (Button) v.findViewById(R.id.startstopbutton);
 
         //시작및정지 버튼
@@ -148,6 +156,10 @@ public class HomeFragment extends Fragment implements SensorEventListener {
             Intent intent = new Intent(getActivity(), ResultActivity.class);
             startActivity(intent);
         }
+    }
+
+    public void totalSound(){
+
     }
 
 

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\gilst\\AndroidStudioProjects\\ptsupport\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
                     "source": "C:\\Users\\gilst\\.gradle\\caches\\transforms-2\\files-2.1\\8203404b8afb733fd0e1fbbe91914d6e\\jetified-bottom-bar-2.3.1\\res\\values-land\\values-land.xml",

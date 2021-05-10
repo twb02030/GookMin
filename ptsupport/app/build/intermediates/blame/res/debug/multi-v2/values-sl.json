@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\gilst\\AndroidStudioProjects\\ptsupport\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sl\\values-sl.xml",
+            "outputFile": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sl\\values-sl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\gilst\\.gradle\\caches\\transforms-2\\files-2.1\\f362f53b80f51916a43478ddab81269d\\core-1.3.1\\res\\values-sl\\values-sl.xml",

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\gilst\\AndroidStudioProjects\\ptsupport\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ko\\values-ko.xml",
+            "outputFile": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ko\\values-ko.xml",
             "map": [
                 {
                     "source": "C:\\Users\\gilst\\.gradle\\caches\\transforms-2\\files-2.1\\78f076050e9bd1b982c73d33fe5cf814\\preference-1.1.1\\res\\values-ko\\values-ko.xml",

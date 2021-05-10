@@ -22,7 +22,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.Ptsupport" >
         <activity android:name="com.example.ptsupport.ResultActivity" />
-        <activity android:name="com.example.ptsupport.MainActivity" >
+        <activity
+            android:name="com.example.ptsupport.MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
