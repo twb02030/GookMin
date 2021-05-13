@@ -30,7 +30,7 @@
 
         <TextView
             android:id="@+id/Stepcount"
-            android:layout_width="113dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/walk_circle"
             android:layout_alignEnd="@+id/walk_circle"
@@ -41,6 +41,7 @@
             android:layout_marginBottom="435dp"
             android:gravity="center"
             android:text="10000"
+            android:textColor="@color/black"
             android:textSize="35dp" />
 
     </RelativeLayout>
@@ -95,6 +96,7 @@
         android:layout_marginBottom="230dp"
         android:text="0.00km"
         android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.195"
@@ -107,6 +109,7 @@
         android:layout_marginBottom="230dp"
         android:text="0.00 kcal"
         android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -118,6 +121,7 @@
         android:layout_marginBottom="230dp"
         android:text="0.00%"
         android:textColor="@color/black"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.815"

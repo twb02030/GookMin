@@ -4,20 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/b2_cl"
     tools:context=".ResultActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="412dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
+    <ImageView
+        android:id="@+id/walk_circle2"
+        android:layout_width="329dp"
+        android:layout_height="300dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/n1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/Result_km_img"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="256dp"
+        android:src="@drawable/hom_1"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/Result_kcal_img"
+        android:layout_width="34dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="256dp"
+        android:src="@drawable/hom_2"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/Result_per_img"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="240dp"
+        android:src="@drawable/hom_3"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -28,26 +63,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"></LinearLayout>
 
-    <org.eazegraph.lib.charts.PieChart
-        android:id="@+id/piechart_result"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="60dp"
-        android:padding="8dp"
-        app:egLegendHeight="0dp"
-        app:egInnerPadding="90"
-        app:egHighlightStrength="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/Result_chart_steps"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="192dp"
+        android:gravity="center"
         android:text="0"
+        android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -59,41 +82,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="68dp"
-        android:text="Return to main"
+        android:text="메인으로 돌아가기"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/Result_km_img"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="52dp"
-        app:layout_constraintEnd_toStartOf="@+id/Result_per_img"
-        app:layout_constraintHorizontal_bias="0.436"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/piechart_result"
-        app:srcCompat="@android:drawable/presence_online" />
-
-    <ImageView
-        android:id="@+id/Result_per_img"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintEnd_toStartOf="@+id/Result_kcal_img"
-        app:layout_constraintTop_toBottomOf="@+id/piechart_result"
-        app:srcCompat="@android:drawable/presence_online" />
-
-    <ImageView
-        android:id="@+id/Result_kcal_img"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/piechart_result"
-        app:srcCompat="@android:drawable/presence_online" />
 
     <TextView
         android:id="@+id/Result_comments"
@@ -103,7 +95,8 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="136dp"
         android:gravity="center"
-        android:text="Shows comments for last days records"
+        android:text="오늘 진행 상황에 대한 코멘트를 보여줍니다."
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -113,34 +106,39 @@
         android:id="@+id/Result_km"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="230dp"
         android:gravity="center"
-        android:text="km"
+        android:text="0.00 km"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/Result_km_img"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="@+id/Result_km_img"
-        app:layout_constraintTop_toTopOf="@+id/Result_km_img" />
+        app:layout_constraintStart_toStartOf="@+id/Result_km_img" />
 
     <TextView
         android:id="@+id/Result_per"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="230dp"
         android:gravity="center"
-        android:text="%"
+        android:text="0.00%"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/Result_per_img"
-        app:layout_constraintStart_toStartOf="@+id/Result_per_img"
-        app:layout_constraintTop_toTopOf="@+id/Result_per_img" />
+        app:layout_constraintStart_toStartOf="@+id/Result_per_img" />
 
     <TextView
         android:id="@+id/Result_kcal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="230dp"
         android:gravity="center"
-        android:text="kcal"
+        android:text="0.00 kcal"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/Result_kcal_img"
-        app:layout_constraintStart_toStartOf="@+id/Result_kcal_img"
-        app:layout_constraintTop_toTopOf="@+id/Result_kcal_img" />
+        app:layout_constraintStart_toStartOf="@+id/Result_kcal_img" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

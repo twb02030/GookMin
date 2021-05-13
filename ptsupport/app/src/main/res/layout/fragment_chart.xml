@@ -7,17 +7,109 @@
     android:background="@drawable/b2_cl"
     tools:context=".ChartFragment" >
 
+    <ImageView
+        android:id="@+id/ic_avg"
+        android:layout_width="34dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="288dp"
+        android:src="@drawable/hom_2"
+        android:visibility="visible"
+        eaze:layout_constraintBottom_toBottomOf="parent"
+        eaze:layout_constraintEnd_toEndOf="parent"
+        eaze:layout_constraintHorizontal_bias="0.222"
+        eaze:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/ic_total"
+        android:layout_width="34dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="288dp"
+        android:src="@drawable/hom_2"
+        android:visibility="visible"
+        eaze:layout_constraintBottom_toBottomOf="parent"
+        eaze:layout_constraintEnd_toEndOf="parent"
+        eaze:layout_constraintHorizontal_bias="0.787"
+        eaze:layout_constraintStart_toStartOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/walk_circle_layout"
+        android:layout_width="410dp"
+        android:layout_height="302dp"
+        android:layout_marginBottom="340dp"
+        eaze:layout_constraintBottom_toBottomOf="parent"
+        eaze:layout_constraintEnd_toEndOf="parent"
+        eaze:layout_constraintHorizontal_bias="0.0"
+        eaze:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:id="@+id/walk_circle"
+            android:layout_width="329dp"
+            android:layout_height="300dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:src="@drawable/n1" />
+
+        <TextView
+            android:id="@+id/CFstepCount"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="147dp"
+            android:layout_marginEnd="138dp"
+            android:layout_marginBottom="125dp"
+            android:gravity="center"
+            android:text="10000"
+            android:textColor="#000000"
+            android:textSize="35dp" />
+
+    </RelativeLayout>
+
     <org.eazegraph.lib.charts.BarChart
         android:id="@+id/chart_bargraph"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginBottom="80dp"
+        eaze:egEmptyDataText="아직 기록이 없습니다"
+        eaze:egFixedBarWidth="false"
+        eaze:egLegendColor="@color/black"
         eaze:egLegendHeight="35dp"
+        eaze:egLegendTextSize="14sp"
         eaze:egShowValues="true"
+        eaze:layout_constraintBottom_toBottomOf="parent"
         eaze:layout_constraintEnd_toEndOf="parent"
         eaze:layout_constraintHorizontal_bias="0.0"
-        eaze:layout_constraintStart_toStartOf="parent"
-        eaze:layout_constraintTop_toTopOf="parent" />
+        eaze:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/avg_count"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="264dp"
+        android:gravity="center"
+        android:text="0.00"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        eaze:layout_constraintBottom_toBottomOf="parent"
+        eaze:layout_constraintEnd_toEndOf="@+id/ic_avg"
+        eaze:layout_constraintStart_toStartOf="@+id/ic_avg" />
+
+    <TextView
+        android:id="@+id/total_count"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="264dp"
+        android:gravity="center"
+        android:text="0.00"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        eaze:layout_constraintBottom_toBottomOf="parent"
+        eaze:layout_constraintEnd_toEndOf="@+id/ic_total"
+        eaze:layout_constraintStart_toStartOf="@+id/ic_total" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

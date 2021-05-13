@@ -24,6 +24,8 @@ import androidx.fragment.app.Fragment;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class HomeFragment extends Fragment implements SensorEventListener {
 
     static int DEFAULT_GOAL = 10000;
@@ -31,7 +33,6 @@ public class HomeFragment extends Fragment implements SensorEventListener {
     int todayOffset, since_boot, total_start, total_days, goal, steps_today;
     ImageView ic_km, ic_per, ic_kcal;
     private boolean checknowSteps = true; //시작 혹은 정지 상태. START = true,   STOP = false
-
     public final static NumberFormat formatter = NumberFormat.getInstance(Locale.getDefault());
 
     public HomeFragment() {
@@ -41,7 +42,6 @@ public class HomeFragment extends Fragment implements SensorEventListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getActivity().startService(new Intent(getActivity(), SensorListener.class));
-
     }
 
 
@@ -98,7 +98,7 @@ public class HomeFragment extends Fragment implements SensorEventListener {
         todayOffset = db.getSteps(Util.getToday());
 
         SharedPreferences prefs =
-                getActivity().getSharedPreferences("pedometer", Context.MODE_PRIVATE);
+                getActivity().getSharedPreferences("pedometer", MODE_PRIVATE);
 
         goal = prefs.getInt("goal", DEFAULT_GOAL);
 
@@ -107,9 +107,6 @@ public class HomeFragment extends Fragment implements SensorEventListener {
         sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_UI, 0);
 
         since_boot = db.getCurrentSteps();
-
-        total_start = db.getTotalWithoutToday();
-        total_days = db.getDays();
 
         db.close();
         updatestats();

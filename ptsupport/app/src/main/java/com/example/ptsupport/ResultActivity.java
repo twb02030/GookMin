@@ -17,8 +17,6 @@ import static com.example.ptsupport.HomeFragment.formatter;
 
 public class ResultActivity extends AppCompatActivity {
 
-    PieModel finalGoal, finalCurrent;
-    PieChart pieChartR;
     TextView pieChartSteps, finalRkm, finalRpercent, finalRkcal;
 
     @Override
@@ -31,7 +29,7 @@ public class ResultActivity extends AppCompatActivity {
         actionBar.hide();
 
         //findViewById
-        pieChartR = findViewById(R.id.piechart_result);
+
         pieChartSteps = findViewById(R.id.Result_chart_steps);
         finalRkm = findViewById(R.id.Result_km);
         finalRpercent = findViewById(R.id.Result_per);
@@ -39,13 +37,6 @@ public class ResultActivity extends AppCompatActivity {
 
         int steps_today = 5000;
 
-        //차트
-        finalCurrent = new PieModel("", steps_today, Color.parseColor("#99CC99"));
-        pieChartR.addPieSlice(finalCurrent);
-        finalGoal = new PieModel("", DEFAULT_GOAL, Color.parseColor("#111111"));
-        pieChartR.addPieSlice(finalGoal);
-
-        pieChartR.startAnimation();
 
         //텍스트
         double percent = steps_today * 100 / DEFAULT_GOAL;
