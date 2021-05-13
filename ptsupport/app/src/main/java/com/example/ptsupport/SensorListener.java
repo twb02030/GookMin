@@ -25,12 +25,14 @@ public class SensorListener extends Service implements SensorEventListener {
 
     }
 
+    //센서 흔들림 감지 시 걸음수 저장, savesteps() 함수 호출하여 데이터베이스 작업
     @Override
     public void onSensorChanged(SensorEvent event) {
         steps = (int) event.values[0];
         savesteps();
     }
 
+    //데이터베이스에 값 저장, 최근 걸음 수 저장
     private boolean savesteps() {
         Database db = Database.getInstance(this);
         db.saveCurrentSteps(steps);

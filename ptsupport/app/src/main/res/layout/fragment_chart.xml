@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:eaze="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/b2_cl"
+    tools:context=".ChartFragment" >
+
+    <org.eazegraph.lib.charts.BarChart
+        android:id="@+id/chart_bargraph"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="500dp"
+        eaze:egLegendHeight="35dp"
+        eaze:egShowValues="true"
+        eaze:layout_constraintEnd_toEndOf="parent"
+        eaze:layout_constraintHorizontal_bias="0.0"
+        eaze:layout_constraintStart_toStartOf="parent"
+        eaze:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

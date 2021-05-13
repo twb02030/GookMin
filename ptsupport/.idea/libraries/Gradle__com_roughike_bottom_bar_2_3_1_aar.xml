@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="Gradle: com.roughike:bottom-bar:2.3.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8203404b8afb733fd0e1fbbe91914d6e/jetified-bottom-bar-2.3.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8203404b8afb733fd0e1fbbe91914d6e/jetified-bottom-bar-2.3.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8203404b8afb733fd0e1fbbe91914d6e/jetified-bottom-bar-2.3.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0dbb9a1b0e131b157fa3f335d98036b4/jetified-bottom-bar-2.3.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0dbb9a1b0e131b157fa3f335d98036b4/jetified-bottom-bar-2.3.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0dbb9a1b0e131b157fa3f335d98036b4/jetified-bottom-bar-2.3.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d3b9d04236dc079bc19c94bb8848858e/jetified-bottom-bar-2.3.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d3b9d04236dc079bc19c94bb8848858e/jetified-bottom-bar-2.3.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d3b9d04236dc079bc19c94bb8848858e/jetified-bottom-bar-2.3.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e8c5db6672491b668afa40724a4eb03e/jetified-bottom-bar-2.3.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e8c5db6672491b668afa40724a4eb03e/jetified-bottom-bar-2.3.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e8c5db6672491b668afa40724a4eb03e/jetified-bottom-bar-2.3.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.roughike/bottom-bar/2.3.1/39f1119fdae83e453c640b68c543defded759e3b/bottom-bar-2.3.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.roughike/bottom-bar/2.3.1/a24a34cb8478811e08615ea06a5c27d636bc7e43/bottom-bar-2.3.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
