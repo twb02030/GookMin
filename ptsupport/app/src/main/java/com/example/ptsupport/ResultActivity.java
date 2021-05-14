@@ -3,6 +3,7 @@ package com.example.ptsupport;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +18,8 @@ import static com.example.ptsupport.HomeFragment.formatter;
 
 public class ResultActivity extends AppCompatActivity {
 
-    TextView pieChartSteps, finalRkm, finalRpercent, finalRkcal;
+    TextView finalSteps, finalRkm, finalRpercent, finalRkcal;
+    int Rsteps_today, RtodayOffset, RSince_boot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,19 +32,23 @@ public class ResultActivity extends AppCompatActivity {
 
         //findViewById
 
-        pieChartSteps = findViewById(R.id.Result_chart_steps);
+        finalSteps = findViewById(R.id.Result_chart_steps);
         finalRkm = findViewById(R.id.Result_km);
         finalRpercent = findViewById(R.id.Result_per);
         finalRkcal = findViewById(R.id.Result_kcal);
 
-        int steps_today = 5000;
-
+        Database rdb = Database.getInstance(this);
+        RtodayOffset = rdb.getSteps(Util.getToday());
+        RSince_boot = rdb.getCurrentSteps();
+        rdb.close();
+        Rsteps_today = Math.max(RtodayOffset + RSince_boot, 0);
+        //Rsteps_today = 1000;
 
         //텍스트
-        double percent = steps_today * 100 / DEFAULT_GOAL;
-        double kmcount = steps_today * 70 * 0.000001;
-        double kcalcount = steps_today * 70 * 0.00001 * 40;
-        pieChartSteps.setText(formatter.format(steps_today));
+        double percent = Rsteps_today * 100 / DEFAULT_GOAL;
+        double kmcount = Rsteps_today * 70 * 0.000001;
+        double kcalcount = Rsteps_today * 70 * 0.00001 * 40;
+        finalSteps.setText(formatter.format(Rsteps_today));
         finalRkm.setText(String.format("%.2f",kmcount)+"km");
         finalRpercent.setText(percent+"%");
         finalRkcal.setText(String.format("%.2f",kcalcount)+"kcal");
@@ -55,4 +61,5 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
     }
+
 }
