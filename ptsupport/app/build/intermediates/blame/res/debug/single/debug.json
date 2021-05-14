@@ -1,43 +1,47 @@
 [
     {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_result.xml.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\layout\\activity_result.xml"
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_n3.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable-v24\\n3.png"
     },
     {
         "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hom_1.png.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\hom_1.png"
-    },
-    {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button_design_3.xml.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\button_design_3.xml"
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_walkway_3.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\walkway_3.m4a"
     },
     {
         "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_directions_run_black_24dp.png.flat",
         "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable-v24\\ic_directions_run_black_24dp.png"
     },
     {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_settings_black_24dp.png.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable-v24\\ic_settings_black_24dp.png"
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_app_ic_background_background.xml.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\app_ic_background_background.xml"
     },
     {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_start_2.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\start_2.m4a"
     },
     {
         "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\xml_topbar_tabs.xml.flat",
         "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\xml\\topbar_tabs.xml"
     },
     {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_ready.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\ready.m4a"
+    },
+    {
         "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hom_2.png.flat",
         "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\hom_2.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_walkway_2.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\walkway_2.m4a"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_middle_1.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\middle_1.m4a"
     },
     {
         "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_button_design.xml.flat",
@@ -52,6 +56,14 @@
         "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_app_ic_background_round.xml.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-anydpi-v26\\app_ic_background_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_nagging_1.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\nagging_1.m4a"
+    },
+    {
         "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
@@ -64,56 +76,188 @@
         "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_whitebox.png.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\whitebox.png"
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_n2.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable-v24\\n2.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_app_ic_background_foreground.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-hdpi\\app_ic_background_foreground.png"
     },
     {
         "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_b2_cl.png.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\b2_cl.png"
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button_design_2.xml.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\button_design_2.xml"
     },
     {
         "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_walkway.xml.flat",
         "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\layout\\activity_walkway.xml"
     },
     {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button_design_2.xml.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\button_design_2.xml"
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_app_ic_background_round.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-hdpi\\app_ic_background_round.png"
     },
     {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_bar_chart_black_24dp.png.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable-v24\\ic_bar_chart_black_24dp.png"
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_app_ic_background_foreground.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-mdpi\\app_ic_background_foreground.png"
     },
     {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hom_3.png.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\hom_3.png"
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_app_ic_background_round.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-xhdpi\\app_ic_background_round.png"
     },
     {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_middle_2.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\middle_2.m4a"
     },
     {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_walkway_4.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\walkway_4.m4a"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_start_3.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\start_3.m4a"
     },
     {
         "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_settings.xml.flat",
         "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\layout\\fragment_settings.xml"
     },
     {
-        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_chart.xml.flat",
-        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\layout\\fragment_chart.xml"
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
         "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_app_ic_background_round.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-xxhdpi\\app_ic_background_round.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_finish_1.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\finish_1.m4a"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_app_ic_background_foreground.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-xxhdpi\\app_ic_background_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_walkway_1.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\walkway_1.m4a"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_app_ic_background_round.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-xxxhdpi\\app_ic_background_round.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_n6.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable-v24\\n6.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_result.xml.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\layout\\activity_result.xml"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_nagging_2.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\nagging_2.m4a"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hom_1.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\hom_1.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_walk_image.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable-v24\\walk_image.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button_design_3.xml.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\button_design_3.xml"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_app_ic_background_foreground.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-xhdpi\\app_ic_background_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_settings_black_24dp.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable-v24\\ic_settings_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_cheerup_2.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\cheerup_2.m4a"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_n5.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable-v24\\n5.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_finish_2.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\finish_2.m4a"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_n4.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable-v24\\n4.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_whitebox.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\whitebox.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_app_ic_background_round.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-mdpi\\app_ic_background_round.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_b2_cl.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\b2_cl.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_app_ic_background.xml.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-anydpi-v26\\app_ic_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_bar_chart_black_24dp.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable-v24\\ic_bar_chart_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_middle_3.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\middle_3.m4a"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\drawable_hom_3.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\drawable\\hom_3.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_app_ic_background_foreground.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-xxxhdpi\\app_ic_background_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_cheerup_1.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\cheerup_1.m4a"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_chart.xml.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\layout\\fragment_chart.xml"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_finish_3.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\finish_3.m4a"
     },
     {
         "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
@@ -126,6 +270,10 @@
     {
         "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\raw_start_1.m4a.flat",
+        "source": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\src\\main\\res\\raw\\start_1.m4a"
     },
     {
         "merged": "C:\\Users\\gilst\\GookMin\\ptsupport\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",

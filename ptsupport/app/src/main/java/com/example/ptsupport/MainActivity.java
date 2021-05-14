@@ -4,7 +4,9 @@ import androidx.annotation.IdRes;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
@@ -20,20 +22,26 @@ import com.roughike.bottombar.OnTabSelectListener;
 
 public class MainActivity extends FragmentActivity {
 
-    private HomeFragment homeFragment;
-    private ChartFragment chartFragment;
-    private SettingsFragment settingsFragment;
+    private Fragment homeFragment, chartFragment, settingsFragment;
 
+
+    private static final int PHYISCAL_ACTIVITY = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         homeFragment = new HomeFragment();
         chartFragment = new ChartFragment();
         settingsFragment = new SettingsFragment();
 
         initFragment();
+
+        if(ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACTIVITY_RECOGNITION) == PackageManager.PERMISSION_DENIED){
+            requestPermissions(new String[]{Manifest.permission.ACTIVITY_RECOGNITION}, PHYISCAL_ACTIVITY);
+        }
 
         BottomBar topBar = (BottomBar) findViewById(R.id.topBar);
         topBar.setOnTabSelectListener(new OnTabSelectListener(){
@@ -56,6 +64,8 @@ public class MainActivity extends FragmentActivity {
             }
         });
     }
+
+
 
     public void initFragment(){
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
