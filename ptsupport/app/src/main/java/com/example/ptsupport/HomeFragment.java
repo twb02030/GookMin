@@ -49,13 +49,14 @@ public class HomeFragment extends Fragment implements SensorEventListener {
 
     MediaPlayer ready, start1, start2, start3, middle1, middle2, middle3, finish1, finish2, finish3,
             walkway1, walkway2, walkway3, walkway4, cheerup1, cheerup2;
+    Button startstopButton;
 
     private int MODE_NAME;
     private String MODE1;
     private String MODE2;
     int mStreamId;
 
-    private boolean checknowSteps = false;
+    private static boolean checknowSteps;
     private static SoundPool soundPool;
     private SharedViewModel sharedViewModel; //ViewModel을 사용하여 fragment 간 데이터 전달
 
@@ -96,40 +97,20 @@ public class HomeFragment extends Fragment implements SensorEventListener {
         testText = (TextView) v.findViewById(R.id.testtext);
         randomText = (TextView) v.findViewById(R.id.random);
 
-        Button startstopButton = (Button) v.findViewById(R.id.startstopbutton);
+        startstopButton = (Button) v.findViewById(R.id.startstopbutton);
 
         //시작 및 정지 버튼, 터치시마다 상태 변경 - bg
         startstopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checknowSteps == true) {
-                    checknowSteps = false;
-                    startstopButton.setText("STOP");
-                    //startstopButton.setBackgroundColor(Color.RED);
-                    stopsignView.setVisibility(View.VISIBLE);
-                    Toast.makeText(getActivity(), "만보기 기록이 일시정지되었습니다.", Toast.LENGTH_SHORT).show();
-                    if(steps_today < 10000)
-                    {
-                        Intent intent = new Intent(getActivity(), ResultActivity.class);
-                        startActivity(intent);
-                    }
-                } else {
-                    checknowSteps = true;
-                    startstopButton.setText("START");
-                    //startstopButton.setBackgroundColor(Color.BLUE);
-                    stopsignView.setVisibility(View.GONE);
-                    Toast.makeText(getActivity(), "만보기 기록이 기록됩니다.", Toast.LENGTH_SHORT).show();
-                }
+                checknowSteps = !checknowSteps;
+                onPressedStartStop();
             }
         });
 
 
         return v;
     }
-
-
-
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -169,6 +150,7 @@ public class HomeFragment extends Fragment implements SensorEventListener {
                 getActivity().getSharedPreferences("pedometer", Context.MODE_PRIVATE);
 
         goal = prefs.getInt("goal", DEFAULT_GOAL);
+        checknowSteps = prefs.getBoolean("check", true); //check 키의 값을 불러옴, 해당하는 값이 없으면 기본값인 true로 설정
 
         SensorManager sensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
@@ -181,6 +163,34 @@ public class HomeFragment extends Fragment implements SensorEventListener {
 
         db.close();
         updatestats();
+        onPressedStartStop();
+    }
+
+    public void onPressedStartStop() {
+
+        SharedPreferences pref = getActivity().getSharedPreferences("pedometer", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = pref.edit();
+
+        if(checknowSteps == true) {
+            edit.putBoolean("check", true); //check 키에 true 값을 넣는다
+            edit.commit();
+            startstopButton.setText("STOP");
+            //startstopButton.setBackgroundColor(Color.RED);
+            stopsignView.setVisibility(View.GONE);
+            Toast.makeText(getActivity(), "만보기 기록 중입니다.", Toast.LENGTH_SHORT).show();
+//            if(steps_today < 10000)
+//            {
+//                Intent intent = new Intent(getActivity(), ResultActivity.class);
+//                startActivity(intent);
+//            }
+        } else {
+            edit.putBoolean("check", false); //check 키에 false 값을 넣는다
+            edit.commit();
+            startstopButton.setText("START");
+            //startstopButton.setBackgroundColor(Color.BLUE);
+            stopsignView.setVisibility(View.VISIBLE);
+            Toast.makeText(getActivity(), "만보기 기록이 일시정지되었습니다.", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
@@ -188,6 +198,9 @@ public class HomeFragment extends Fragment implements SensorEventListener {
     @Override
     public void onPause() {
         super.onPause();
+
+        SharedPreferences prefs = getActivity().getSharedPreferences("pedometer", Context.MODE_PRIVATE);
+        checknowSteps = prefs.getBoolean("check", true); //check 키의 값을 불러옴, 해당하는 값이 없으면 기본값인 true로 설정
 
         Database db = Database.getInstance(getActivity());
         db.saveCurrentSteps(since_boot);
