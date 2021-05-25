@@ -32,11 +32,23 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+
 import java.io.Console;
 import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Random;
+
+import static android.content.ContentValues.TAG;
 
 public class HomeFragment extends Fragment implements SensorEventListener {
 
@@ -56,10 +68,12 @@ public class HomeFragment extends Fragment implements SensorEventListener {
     private String MODE2;
     int mStreamId;
 
-    private static boolean checknowSteps;
+    protected static boolean checknowSteps;
     private static SoundPool soundPool;
     private SharedViewModel sharedViewModel; //ViewModel을 사용하여 fragment 간 데이터 전달
 
+    private static final String AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712";
+    private InterstitialAd mInterstitialAd;
 
     public final static NumberFormat formatter = NumberFormat.getInstance(Locale.getDefault());
 
@@ -105,9 +119,15 @@ public class HomeFragment extends Fragment implements SensorEventListener {
             public void onClick(View v) {
                 checknowSteps = !checknowSteps;
                 onPressedStartStop();
+                confirmbutton();
             }
         });
 
+        MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {}
+        });
+        loadAd();
 
         return v;
     }
@@ -152,11 +172,15 @@ public class HomeFragment extends Fragment implements SensorEventListener {
         goal = prefs.getInt("goal", DEFAULT_GOAL);
         checknowSteps = prefs.getBoolean("check", true); //check 키의 값을 불러옴, 해당하는 값이 없으면 기본값인 true로 설정
 
+        //변경 20210524
+        since_boot = db.getCurrentSteps();
+        int pauseDifference = since_boot - prefs.getInt("pauseCount", since_boot);
+
         SensorManager sensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
         sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_UI, 0);
 
-        since_boot = db.getCurrentSteps();
+        since_boot -= pauseDifference;
 
         total_start = db.getTotalWithoutToday();
         total_days = db.getDays();
@@ -404,14 +428,85 @@ public class HomeFragment extends Fragment implements SensorEventListener {
 
     }
 
+    public void loadAd() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+        InterstitialAd.load(
+                getActivity(),
+                AD_UNIT_ID,
+                adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                        Log.i(TAG, "onAdLoaded");
+                        Toast.makeText(getActivity(), "onAdLoaded()", Toast.LENGTH_SHORT).show();
+                        interstitialAd.setFullScreenContentCallback(
+                                new FullScreenContentCallback() {
+                                    @Override
+                                    public void onAdDismissedFullScreenContent() {
+                                        // Called when fullscreen content is dismissed.
+                                        // Make sure to set your reference to null so you don't
+                                        // show it a second time.
+                                        mInterstitialAd = null;
+                                        Log.d("TAG", "The ad was dismissed.");
+                                    }
+
+                                    @Override
+                                    public void onAdFailedToShowFullScreenContent(AdError adError) {
+                                        // Called when fullscreen content failed to show.
+                                        // Make sure to set your reference to null so you don't
+                                        // show it a second time.
+                                        mInterstitialAd = null;
+                                        Log.d("TAG", "The ad failed to show.");
+                                    }
+
+                                    @Override
+                                    public void onAdShowedFullScreenContent() {
+                                        // Called when fullscreen content is shown.
+                                        Log.d("TAG", "The ad was shown.");
+                                    }
+                                });
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        Log.i(TAG, loadAdError.getMessage());
+                        mInterstitialAd = null;
+
+                        String error =
+                                String.format(
+                                        "domain: %s, code: %d, message: %s",
+                                        loadAdError.getDomain(), loadAdError.getCode(), loadAdError.getMessage());
+                        Toast.makeText(
+                                getActivity(), "onAdFailedToLoad() with error: " + error, Toast.LENGTH_SHORT)
+                                .show();
+                    }
+                });
+    }
 
     //미구현, 테스트용 코드, 터치 시 최종결과창 클래스 불러옴
     public void confirmbutton() {
         if (steps_today >= DEFAULT_GOAL) {
             Intent intent = new Intent(getActivity(), ResultActivity.class);
             startActivity(intent);
+        } else {
+            showInterstitial();
+            Intent intent = new Intent(getActivity(), ResultActivity.class);
+            startActivity(intent);
         }
     }
 
+    private void showInterstitial() {
+        // Show the ad if it's ready. Otherwise toast and restart the game.
+        if (mInterstitialAd != null) {
+            mInterstitialAd.show(getActivity());
+        } else {
+            Toast.makeText(getActivity(), "Ad did not load", Toast.LENGTH_SHORT).show();
+            loadAd();
+        }
+    }
 
 }

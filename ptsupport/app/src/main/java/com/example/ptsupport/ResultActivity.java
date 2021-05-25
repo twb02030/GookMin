@@ -1,17 +1,17 @@
 package com.example.ptsupport;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.graphics.Color;
+
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import org.eazegraph.lib.charts.PieChart;
-import org.eazegraph.lib.models.PieModel;
 
 import static com.example.ptsupport.HomeFragment.DEFAULT_GOAL;
 import static com.example.ptsupport.HomeFragment.formatter;
@@ -20,6 +20,9 @@ public class ResultActivity extends AppCompatActivity {
 
     TextView finalSteps, finalRkm, finalRpercent, finalRkcal;
     int Rsteps_today, RtodayOffset, RSince_boot;
+
+
+    private Button retryButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,14 @@ public class ResultActivity extends AppCompatActivity {
         returnbutton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        Button retryButton = (Button) findViewById(R.id.retry_button);
+        retryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }
