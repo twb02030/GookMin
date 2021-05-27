@@ -3,6 +3,7 @@ package com.example.ptsupport;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -32,6 +33,14 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
@@ -44,6 +53,7 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import java.io.Console;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Random;
@@ -62,6 +72,7 @@ public class HomeFragment extends Fragment implements SensorEventListener {
     MediaPlayer ready, start1, start2, start3, middle1, middle2, middle3, finish1, finish2, finish3,
             walkway1, walkway2, walkway3, walkway4, cheerup1, cheerup2;
     Button startstopButton;
+    private PieChart pieChart;
 
     private int MODE_NAME;
     private String MODE1;
@@ -99,18 +110,10 @@ public class HomeFragment extends Fragment implements SensorEventListener {
         ic_kcal = (ImageView) v.findViewById(R.id.ic_kcal);
         ic_per = (ImageView) v.findViewById(R.id.ic_per);
 
-        //STEP_BACKGROUND_IMAGES
-        walkcircle0 = (ImageView) v.findViewById(R.id.walk_circle0);
-        walkcircle10 = (ImageView) v.findViewById(R.id.walk_circle10);
-        walkcircle20 = (ImageView) v.findViewById(R.id.walk_circle20);
-        walkcircle50 = (ImageView) v.findViewById(R.id.walk_circle50);
-        walkcircle80 = (ImageView) v.findViewById(R.id.walk_circle80);
-        walkcircle100 = (ImageView) v.findViewById(R.id.walk_circle100);
-
         //test
         testText = (TextView) v.findViewById(R.id.testtext);
         randomText = (TextView) v.findViewById(R.id.random);
-
+        pieChart = (PieChart) v.findViewById(R.id.activity_main_piechart);
         startstopButton = (Button) v.findViewById(R.id.startstopbutton);
 
         //시작 및 정지 버튼, 터치시마다 상태 변경 - bg
@@ -122,6 +125,9 @@ public class HomeFragment extends Fragment implements SensorEventListener {
                 confirmbutton();
             }
         });
+
+        setupPieChart();
+        loadPieChartData();
 
         MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
             @Override
@@ -188,6 +194,7 @@ public class HomeFragment extends Fragment implements SensorEventListener {
         db.close();
         updatestats();
         onPressedStartStop();
+
     }
 
     public void onPressedStartStop() {
@@ -251,6 +258,7 @@ public class HomeFragment extends Fragment implements SensorEventListener {
             }
             since_boot = (int) event.values[0];
             updatestats();
+
         }
     }
 
@@ -302,123 +310,56 @@ public class HomeFragment extends Fragment implements SensorEventListener {
                 finish1.start();
             }
 
-            //이미지
-            if (steps_today < 10) {
-                walkcircle0.setVisibility(View.VISIBLE);
-
-                walkcircle10.setVisibility(View.INVISIBLE);
-                walkcircle20.setVisibility(View.INVISIBLE);
-                walkcircle50.setVisibility(View.INVISIBLE);
-                walkcircle80.setVisibility(View.INVISIBLE);
-                walkcircle100.setVisibility(View.INVISIBLE);
-            }
-            else if ((1000 <= steps_today)&&(steps_today < 2000)) {
-                walkcircle10.setVisibility(View.VISIBLE);
-
-                walkcircle0.setVisibility(View.INVISIBLE);
-                walkcircle20.setVisibility(View.INVISIBLE);
-                walkcircle50.setVisibility(View.INVISIBLE);
-                walkcircle80.setVisibility(View.INVISIBLE);
-                walkcircle100.setVisibility(View.INVISIBLE);
-            }
-            else if((2000<=steps_today)&&(steps_today<5000)){
-                walkcircle20.setVisibility(View.VISIBLE);
-
-                walkcircle0.setVisibility(View.INVISIBLE);
-                walkcircle10.setVisibility(View.INVISIBLE);
-                walkcircle50.setVisibility(View.INVISIBLE);
-                walkcircle80.setVisibility(View.INVISIBLE);
-                walkcircle100.setVisibility(View.INVISIBLE);
-            }
-
-            else if((5000<=steps_today)&&(steps_today<8000)){
-                walkcircle50.setVisibility(View.VISIBLE);
-
-                walkcircle0.setVisibility(View.INVISIBLE);
-                walkcircle10.setVisibility(View.INVISIBLE);
-                walkcircle20.setVisibility(View.INVISIBLE);
-                walkcircle80.setVisibility(View.INVISIBLE);
-                walkcircle100.setVisibility(View.INVISIBLE);
-            }
-            else if((8000<=steps_today)&&(steps_today<10000)){
-                walkcircle80.setVisibility(View.VISIBLE);
-
-                walkcircle0.setVisibility(View.INVISIBLE);
-                walkcircle10.setVisibility(View.INVISIBLE);
-                walkcircle20.setVisibility(View.INVISIBLE);
-                walkcircle50.setVisibility(View.INVISIBLE);
-                walkcircle100.setVisibility(View.INVISIBLE);
-            }
-            else if(10000<=steps_today){
-                walkcircle100.setVisibility(View.VISIBLE);
-
-                walkcircle0.setVisibility(View.INVISIBLE);
-                walkcircle10.setVisibility(View.INVISIBLE);
-                walkcircle20.setVisibility(View.INVISIBLE);
-                walkcircle50.setVisibility(View.INVISIBLE);
-                walkcircle80.setVisibility(View.INVISIBLE);
-            }
         }
+        loadPieChartData();
 
-        else if(MODE_NAME == 2){
-            //이미지
-            if (steps_today < 10) {
-                walkcircle0.setVisibility(View.VISIBLE);
+    }
 
-                walkcircle10.setVisibility(View.INVISIBLE);
-                walkcircle20.setVisibility(View.INVISIBLE);
-                walkcircle50.setVisibility(View.INVISIBLE);
-                walkcircle80.setVisibility(View.INVISIBLE);
-                walkcircle100.setVisibility(View.INVISIBLE);
-            }
-            else if ((1000 <= steps_today)&&(steps_today < 2000)) {
-                walkcircle10.setVisibility(View.VISIBLE);
+    private void setupPieChart() {
 
-                walkcircle0.setVisibility(View.INVISIBLE);
-                walkcircle20.setVisibility(View.INVISIBLE);
-                walkcircle50.setVisibility(View.INVISIBLE);
-                walkcircle80.setVisibility(View.INVISIBLE);
-                walkcircle100.setVisibility(View.INVISIBLE);
-            }
-            else if((2000<=steps_today)&&(steps_today<5000)){
-                walkcircle20.setVisibility(View.VISIBLE);
+        pieChart.setDrawEntryLabels(false);
 
-                walkcircle0.setVisibility(View.INVISIBLE);
-                walkcircle10.setVisibility(View.INVISIBLE);
-                walkcircle50.setVisibility(View.INVISIBLE);
-                walkcircle80.setVisibility(View.INVISIBLE);
-                walkcircle100.setVisibility(View.INVISIBLE);
-            }
+        Legend l = pieChart.getLegend();
+        l.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        l.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
+        l.setOrientation(Legend.LegendOrientation.VERTICAL);
+        l.setDrawInside(false);
+        l.setEnabled(false);
 
-            else if((5000<=steps_today)&&(steps_today<8000)){
-                walkcircle50.setVisibility(View.VISIBLE);
+        pieChart.setCenterText("Spending by Category");
+        pieChart.setCenterTextSize(18);
+        pieChart.setDrawCenterText(false);
+        pieChart.setHoleColor(R.color.Transparent);
+        pieChart.setHoleRadius(85f);
 
-                walkcircle0.setVisibility(View.INVISIBLE);
-                walkcircle10.setVisibility(View.INVISIBLE);
-                walkcircle20.setVisibility(View.INVISIBLE);
-                walkcircle80.setVisibility(View.INVISIBLE);
-                walkcircle100.setVisibility(View.INVISIBLE);
-            }
-            else if((8000<=steps_today)&&(steps_today<10000)){
-                walkcircle80.setVisibility(View.VISIBLE);
+        pieChart.getDescription().setEnabled(false);
 
-                walkcircle0.setVisibility(View.INVISIBLE);
-                walkcircle10.setVisibility(View.INVISIBLE);
-                walkcircle20.setVisibility(View.INVISIBLE);
-                walkcircle50.setVisibility(View.INVISIBLE);
-                walkcircle100.setVisibility(View.INVISIBLE);
-            }
-            else if(10000<=steps_today){
-                walkcircle100.setVisibility(View.VISIBLE);
 
-                walkcircle0.setVisibility(View.INVISIBLE);
-                walkcircle10.setVisibility(View.INVISIBLE);
-                walkcircle20.setVisibility(View.INVISIBLE);
-                walkcircle50.setVisibility(View.INVISIBLE);
-                walkcircle80.setVisibility(View.INVISIBLE);
-            }
-        }
+    }
 
+    private void loadPieChartData() {
+
+        int pieCS = Math.max(todayOffset + since_boot, 0);
+        int pieLeftGoal = goal - pieCS;
+
+        ArrayList<PieEntry> entries = new ArrayList<>();
+        entries.add(new PieEntry(Math.max(todayOffset + since_boot, 0), "Current"));
+        entries.add(new PieEntry(pieLeftGoal, "Goal"));
+
+        PieDataSet dataSet = new PieDataSet(entries, "Expense Category");
+        dataSet.setColors(new int[] {Color.GREEN, Color.WHITE, Color.GRAY, Color.BLACK, Color.BLUE});
+
+        PieData data = new PieData(dataSet);
+        data.setDrawValues(false);
+        data.setValueFormatter(new PercentFormatter(pieChart));
+        data.setValueTextSize(12f);
+        data.setValueTextColor(Color.BLACK);
+
+        pieChart.setData(data);
+        pieChart.notifyDataSetChanged();
+        pieChart.invalidate();
+
+        //pieChart.animateY(1400, Easing.EaseInOutQuad);
     }
 
 

@@ -5,108 +5,42 @@
     android:id="@+id/uifragmentlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/b2_cl">
+    android:background="#FFFFFF">
 
-
-    <RelativeLayout
-        android:id="@+id/walk_circle_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="140dp"
-        android:layout_marginBottom="290dp"
+    <ImageView
+        android:id="@+id/ic_kcal"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="400dp"
+        android:src="@drawable/hom_2"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintEnd_toStartOf="@+id/ic_per"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toEndOf="@+id/ic_km" />
 
-
-        <ImageView
-            android:id="@+id/walk_circle100"
-            android:layout_width="329dp"
-            android:layout_height="300dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:visibility="visible"
-            android:src="@drawable/n6" />
-
-
-        <ImageView
-            android:id="@+id/walk_circle80"
-            android:layout_width="329dp"
-            android:layout_height="300dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:visibility="visible"
-            android:src="@drawable/n5" />
-
-
-        <ImageView
-            android:id="@+id/walk_circle50"
-            android:layout_width="329dp"
-            android:layout_height="300dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:visibility="visible"
-            android:src="@drawable/n4" />
-
-
-        <ImageView
-            android:id="@+id/walk_circle20"
-            android:layout_width="329dp"
-            android:layout_height="300dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:visibility="visible"
-            android:src="@drawable/n3" />
-
-
-        <ImageView
-            android:id="@+id/walk_circle10"
-            android:layout_width="329dp"
-            android:layout_height="300dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:visibility="visible"
-            android:src="@drawable/n2" />
-
-
-        <ImageView
-            android:id="@+id/walk_circle0"
-            android:layout_width="329dp"
-            android:layout_height="300dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:src="@drawable/n1"
-            android:visibility="visible" />
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/activity_main_piechart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="135dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/Stepcount"
             android:layout_width="113dp"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/walk_circle0"
-            android:layout_alignEnd="@+id/walk_circle0"
-            android:layout_marginStart="108dp"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="120dp"
-            android:layout_marginEnd="108dp"
-            android:layout_marginBottom="435dp"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:text="10000"
-            android:textSize="35dp"
-            android:textColor="@color/black"/>
+            android:textColor="#48CD22"
+            android:textSize="35dp" />
+    </com.github.mikephil.charting.charts.PieChart>
 
-    </RelativeLayout>
     <Button
         android:id="@+id/startstopbutton"
         android:layout_width="140dp"
@@ -199,18 +133,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.18"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/ic_kcal"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="260dp"
-        android:src="@drawable/hom_2"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/ic_per"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toEndOf="@+id/ic_km" />
 
     <ImageView
         android:id="@+id/ic_per"
