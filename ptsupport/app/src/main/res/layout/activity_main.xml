@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constrainlayout"
+    android:id="@+id/relativelayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <FrameLayout
+        android:id="@+id/frame_popup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/skipText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_weight="1"
+                android:text="▶   Skip!"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+        </LinearLayout>
+
+        <include
+            layout="@layout/activity_popup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <FrameLayout
         android:id="@+id/contentContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="invisible">
 
         <com.roughike.bottombar.BottomBar
             android:id="@+id/topBar"
@@ -19,7 +54,10 @@
             android:background="@color/tab_tab2"
             app:bb_activeTabColor="#385D6E"
             app:bb_inActiveTabColor="#FFFFFF"
-            app:bb_tabXmlResource="@xml/topbar_tabs" />
+            app:bb_tabXmlResource="@xml/topbar_tabs" >
+
+        </com.roughike.bottombar.BottomBar>
+
     </FrameLayout>
 
     <com.google.android.gms.ads.AdView
@@ -30,9 +68,11 @@
         android:layout_centerHorizontal="true"
         android:visibility="visible"
         app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111">
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
     </com.google.android.gms.ads.AdView>
 
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

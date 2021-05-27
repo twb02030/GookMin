@@ -12,5 +12,6 @@
     <color name="tab_tab2">#94d1f8</color>
     <color name="gainsboro">#DCDCDC</color>
     <color name="lightgrey">#D3D3D3</color>
+    <color name="lightgreen">#A0F081</color>
     <color name="Transparent">#00000000</color>
 </resources>

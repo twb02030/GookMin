@@ -7,52 +7,27 @@
     android:background="@drawable/b2_cl"
     tools:context=".ResultActivity">
 
-    <ImageView
-        android:id="@+id/walk_circle2"
-        android:layout_width="329dp"
-        android:layout_height="300dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="64dp"
-        android:src="@drawable/n1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/Result_km_img"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="256dp"
-        android:src="@drawable/hom_1"
-        android:visibility="visible"
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/activity_result_piechart"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.202"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-    <ImageView
-        android:id="@+id/Result_kcal_img"
-        android:layout_width="34dp"
-        android:layout_height="33dp"
-        android:layout_marginBottom="256dp"
-        android:src="@drawable/hom_2"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/Result_per_img"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_marginBottom="240dp"
-        android:src="@drawable/hom_3"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.835"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/Result_chart_steps"
+            android:layout_width="113dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:text="10000"
+            android:textColor="#48CD22"
+            android:textSize="35dp" />
+    </com.github.mikephil.charting.charts.PieChart>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -63,28 +38,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"></LinearLayout>
 
-    <TextView
-        android:id="@+id/Result_chart_steps"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
-        android:gravity="center"
-        android:text="0"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/returnbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
-        android:text="메인으로 돌아가기"
+        android:layout_marginBottom="160dp"
+        android:background="@drawable/color_change"
+        android:text="메인으로"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -93,7 +56,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="26dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="136dp"
+        android:layout_marginBottom="76dp"
         android:gravity="center"
         android:text="오늘 진행 상황에 대한 코멘트를 보여줍니다."
         android:textColor="@color/black"
@@ -106,51 +69,42 @@
         android:id="@+id/Result_km"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="230dp"
+        android:layout_marginBottom="240dp"
         android:gravity="center"
         android:text="0.00 km"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/Result_km_img"
-        app:layout_constraintStart_toStartOf="@+id/Result_km_img" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.881"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/Result_per"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="230dp"
+        android:layout_marginBottom="240dp"
         android:gravity="center"
         android:text="0.00%"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/Result_per_img"
-        app:layout_constraintStart_toStartOf="@+id/Result_per_img" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.112"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/Result_kcal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="230dp"
+        android:layout_marginBottom="240dp"
         android:gravity="center"
         android:text="0.00 kcal"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/Result_kcal_img"
-        app:layout_constraintStart_toStartOf="@+id/Result_kcal_img" />
-
-    <Button
-        android:id="@+id/retry_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="620dp"
-        android:text="Button"
-        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
