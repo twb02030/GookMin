@@ -1761,6 +1761,8 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable b2_cl
 drawable bb_bottom_bar_top_shadow
+drawable bg_indicator_active
+drawable bg_indicator_inactive
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1778,9 +1780,6 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
-drawable hom_1
-drawable hom_2
-drawable hom_3
 drawable ic_arrow_down_24dp
 drawable ic_bar_chart_black_24dp
 drawable ic_clock_black_24dp
@@ -1831,6 +1830,14 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable p__img00
+drawable p__img01
+drawable p__img02
+drawable p__img03
+drawable p__img04
+drawable p_img05
+drawable p_img06
+drawable p_img07
 drawable preference_list_divider_material
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -2035,8 +2042,10 @@ id floating
 id forever
 id frag_set
 id fragment_container_view_tag
+id frame_popup
 id ghost_view
 id ghost_view_holder
+id glide_custom_view_target_tag
 id gone
 id graph
 id graph_wrap
@@ -2049,9 +2058,6 @@ id hideable
 id home
 id homeAsUp
 id honorRequest
-id ic_kcal
-id ic_km
-id ic_per
 id icon
 id icon_frame
 id icon_group
@@ -2060,6 +2066,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageSlider
 id include_layout
 id include_walkway
 id info
@@ -2073,6 +2080,7 @@ id labelGroup
 id labeled
 id largeLabel
 id layout
+id layoutIndicators
 id left
 id leftToRight
 id line1
@@ -2106,6 +2114,7 @@ id media_actions
 id message
 id middle
 id mini
+id modeNum
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -2215,7 +2224,9 @@ id showTitle
 id shy
 id sin
 id skipCollapsed
+id skipText
 id slide
+id sliderViewPager
 id smallLabel
 id snackbar_action
 id snackbar_text
@@ -2306,6 +2317,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id viewFadingEdge
 id view_offset_helper
 id view_tree_lifecycle_owner
 id view_tree_saved_state_registry_owner
@@ -2385,6 +2397,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_popup
 layout activity_result
 layout activity_walkway
 layout bb_bottom_bar_item_container
@@ -2414,6 +2427,7 @@ layout fragment_chart
 layout fragment_home
 layout fragment_settings
 layout image_frame
+layout item_slider
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider
@@ -2513,14 +2527,13 @@ mipmap ic_launcher_round
 plurals mtrl_badge_content_description
 raw cheerup_1
 raw cheerup_2
+raw diet_sound
 raw finish_1
 raw finish_2
 raw finish_3
 raw middle_1
 raw middle_2
 raw middle_3
-raw nagging_1
-raw nagging_2
 raw ready
 raw start_1
 raw start_2

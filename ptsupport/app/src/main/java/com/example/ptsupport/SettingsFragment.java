@@ -2,6 +2,7 @@ package com.example.ptsupport;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
@@ -23,18 +24,15 @@ import androidx.lifecycle.ViewModelProvider;
 
 public class SettingsFragment extends Fragment {
 
-    boolean is_touch;
+    public static boolean is_touch;
+    private SharedPreferences sp;
+    SharedPreferences.Editor ed;
     LinearLayout walkway;
 
-    private Button mode_select;
-    private Button walk_check;
-    private Button button_x;
-    private SharedViewModel sharedViewModel;
+    Button mode_select;
+    Button walk_check;
+    Button button_x;
 
-//    //프래그먼트 매니저 선언, 프래그먼트 트랜잭션 시작
-//    FragmentManager fragmentManager = getFragmentManager();
-//    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//    SettingsFragment setting = new SettingsFragment();
 
     public SettingsFragment() {
 
@@ -44,11 +42,8 @@ public class SettingsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        sharedViewModel = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
-
-
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,34 +52,68 @@ public class SettingsFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_settings, container, false);
     }
 
+
+    public void onModeClick() {
+
+        sp = getActivity().getSharedPreferences("SharedPrefFile", Context.MODE_PRIVATE);
+        ed = sp.edit();
+
+        if(is_touch == true)
+        {
+            ed.putBoolean("mode", true);
+            ed.commit();
+            mode_select.setText("EASY");
+//            Toast.makeText(getActivity(), "음성 코칭이 진행되는 EASY 모드입니다", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            ed.putBoolean("mode", false);
+            ed.commit();
+            mode_select.setText("DIET");
+//            Toast.makeText(getActivity(), "1분 간격으로 알림음이 들리는 DIET 모드입니다", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    //앱 다시 실행할 때
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        SharedPreferences sp =
+                getActivity().getSharedPreferences("SharedPrefFile", Context.MODE_PRIVATE);
+
+        is_touch = sp.getBoolean("mode", true);
+        onModeClick();
+    }
+
+
+    //앱 나갔을 떄
+    @Override
+    public void onPause(){
+        super.onPause();
+
+        SharedPreferences sp = getActivity().getSharedPreferences("SharedPrefFile", Context.MODE_PRIVATE);
+        is_touch = sp.getBoolean("mode", true);
+    }
+
+
     @Override
     public void onStart(){
         super.onStart();
 
         walkway = (LinearLayout) getActivity().findViewById(R.id.include_layout);
-        Button button_x = (Button) getActivity().findViewById(R.id.btn_x);
-        Button walk_check = (Button) getActivity().findViewById(R.id.button_check);
+        button_x = (Button) getActivity().findViewById(R.id.btn_x);
+        walk_check = (Button) getActivity().findViewById(R.id.button_check);
 
-        final Button mode_select = (Button) getView().findViewById(R.id.button_mode);
+        mode_select = (Button) getView().findViewById(R.id.button_mode);
 
         //모드 선택
         mode_select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(is_touch == true){
-                    mode_select.setText("EASY");
-                    is_touch = false;
-                    Toast.makeText(getActivity(), "음성 코칭이 진행되는 EASY 모드입니다", Toast.LENGTH_SHORT).show();
-                    String Message1 = "EASY";
-                    sharedViewModel.setLiveData(Message1);
-                }
-                else {
-                    mode_select.setText("DIET");
-                    Toast.makeText(getActivity(), "1분마다 소리가 나는 DIET 모드입니다. 추후 업뎃 예정", Toast.LENGTH_SHORT).show();
-                    is_touch = true;
-                    String Message2 = "DIET";
-                    sharedViewModel.setLiveData(Message2);
-                }
+                is_touch = !is_touch;
+                onModeClick();
             }
 
         });
