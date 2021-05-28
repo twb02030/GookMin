@@ -50,7 +50,7 @@ public class SensorListener extends Service implements SensorEventListener {
             if (pauseDifference > 0) {
                 // update pauseCount for the new day
                 getSharedPreferences("pedometer", Context.MODE_PRIVATE).edit()
-                        .putInt("pauseCount", steps).commit();
+                        .putInt("pauseCount", steps).apply();
             }
         }
 

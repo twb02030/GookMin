@@ -80,11 +80,11 @@ public class SettingsFragment extends Fragment {
     public void onResume(){
         super.onResume();
 
-        SharedPreferences sp =
-                getActivity().getSharedPreferences("SharedPrefFile", Context.MODE_PRIVATE);
+        //SharedPreferences sp =
+        //        getActivity().getSharedPreferences("SharedPrefFile", Context.MODE_PRIVATE);
 
-        is_touch = sp.getBoolean("mode", true);
-        onModeClick();
+        //is_touch = sp.getBoolean("mode", true);
+        //onModeClick();
     }
 
 
@@ -93,8 +93,8 @@ public class SettingsFragment extends Fragment {
     public void onPause(){
         super.onPause();
 
-        SharedPreferences sp = getActivity().getSharedPreferences("SharedPrefFile", Context.MODE_PRIVATE);
-        is_touch = sp.getBoolean("mode", true);
+        //SharedPreferences sp = getActivity().getSharedPreferences("SharedPrefFile", Context.MODE_PRIVATE);
+        //is_touch = sp.getBoolean("mode", true);
     }
 
 

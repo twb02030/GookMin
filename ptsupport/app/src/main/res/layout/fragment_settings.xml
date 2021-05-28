@@ -4,18 +4,18 @@
     android:id="@+id/frag_set"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/b2_cl">
+    android:background="@drawable/background_img">
 
     <Button
         android:id="@+id/btn_x"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginBottom="12dp"
+        android:background="@drawable/button_design_3"
         android:text="X"
         android:textColor="@color/black"
         android:textSize="17dp"
         android:textStyle="bold"
-        android:background="@drawable/button_design_3"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/include_layout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         android:layout_marginBottom="15dp"
         android:text="모드 선택"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="28dp"
         app:layout_constraintBottom_toTopOf="@+id/button_mode"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -74,11 +74,10 @@
         android:layout_marginBottom="15dp"
         android:text="걷는 방법"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="28dp"
         app:layout_constraintBottom_toTopOf="@+id/button_check"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
     <LinearLayout
         android:id="@+id/include_layout"
@@ -97,5 +96,6 @@
             android:layout_height="match_parent" />
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

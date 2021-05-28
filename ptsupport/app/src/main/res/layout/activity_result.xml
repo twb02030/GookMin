@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/b2_cl"
+    android:background="@drawable/background_img"
     tools:context=".ResultActivity">
 
     <com.github.mikephil.charting.charts.PieChart
@@ -17,14 +17,14 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.117">
 
         <TextView
             android:id="@+id/Result_chart_steps"
             android:layout_width="113dp"
-            android:layout_height="100dp"
-            android:gravity="center"
+            android:layout_height="50dp"
             android:text="10000"
+            android:textAlignment="center"
             android:textColor="#48CD22"
             android:textSize="35dp" />
     </com.github.mikephil.charting.charts.PieChart>
@@ -38,17 +38,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"></LinearLayout>
 
-    <Button
-        android:id="@+id/returnbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="160dp"
-        android:background="@drawable/color_change"
-        android:text="메인으로"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/returnButton"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="144dp"
+        android:background="@drawable/button_design_4"
+        android:backgroundTint="@color/lightGreen"
+        android:gravity="center"
+        android:text="MAIN"
+        android:textColor="@color/white"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/Result_comments"
@@ -56,9 +60,9 @@
         android:layout_height="60dp"
         android:layout_marginStart="26dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="87dp"
         android:gravity="center"
-        android:text="오늘 진행 상황에 대한 코멘트를 보여줍니다."
+        android:text="오늘도 수고하셨습니다. 마무리 스트레칭은 필수!"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,42 +73,67 @@
         android:id="@+id/Result_km"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="240dp"
-        android:gravity="center"
-        android:text="0.00 km"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="248dp"
+        android:gravity="left"
+        android:text="0.00"
+        android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.881"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
         android:id="@+id/Result_per"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="240dp"
-        android:gravity="center"
-        android:text="0.00%"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="248dp"
+        android:text="0.0"
+        android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/Result_kcal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="240dp"
-        android:gravity="center"
-        android:text="0.00 kcal"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="248dp"
+        android:text="0.00"
+        android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Result_per"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toEndOf="@+id/Result_km" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="284dp"
+        android:layout_height="27dp"
+        android:text="Km                    Kcal                    %"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/returnButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Result_kcal"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="324dp"
+        android:layout_height="245dp"
+        android:layout_marginBottom="72dp"
+        android:src="@drawable/back_deco_img"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

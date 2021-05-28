@@ -5,7 +5,7 @@
     android:id="@+id/uifragmentlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/b2_cl">
+    android:background="@drawable/background_img">
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/activity_main_piechart"
@@ -17,32 +17,17 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.117">
 
         <TextView
             android:id="@+id/Stepcount"
             android:layout_width="113dp"
-            android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_height="50dp"
             android:text="10000"
+            android:textAlignment="center"
             android:textColor="#48CD22"
             android:textSize="35dp" />
     </com.github.mikephil.charting.charts.PieChart>
-
-    <Button
-        android:id="@+id/startstopbutton"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="104dp"
-        android:background="@drawable/button_design"
-        android:gravity="center"
-        android:text="STOP"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/Stopsign"
@@ -61,25 +46,26 @@
         android:id="@+id/reset_testonly"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="680dp"
+        android:layout_marginTop="520dp"
         android:background="#FFFFFF"
+        android:src="@drawable/whitebox"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/whitebox" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Kmcount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
-        android:layout_marginBottom="228dp"
+        android:layout_marginBottom="248dp"
         android:gravity="left"
-        android:text="0.00km"
+        android:text="0.00"
+        android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="18dp"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -89,24 +75,26 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="228dp"
-        android:text="0.00 kcal"
+        android:layout_marginBottom="248dp"
+        android:text="0.00"
+        android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="18dp"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/percentcount"
-        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toEndOf="@+id/Kmcount" />
 
     <TextView
         android:id="@+id/percentcount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="228dp"
-        android:text="0.00%"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="248dp"
+        android:text="0.0"
+        android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="18dp"
+        android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -116,7 +104,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="140dp"
         android:text="EASY"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.899"
@@ -127,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="164dp"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.756"
@@ -139,9 +127,49 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="164dp"
         android:text="10"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.858"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="292dp"
+        android:layout_height="29dp"
+        android:text="Km                   Kcal                    %"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/Stopsign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Kcalcount"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="324dp"
+        android:layout_height="245dp"
+        android:layout_marginBottom="72dp"
+        android:src="@drawable/back_deco_img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/startstopbutton"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="104dp"
+        android:background="@drawable/button_design"
+        android:gravity="center"
+        android:text="STOP"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
 

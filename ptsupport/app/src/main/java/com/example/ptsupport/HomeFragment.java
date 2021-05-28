@@ -24,6 +24,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -72,7 +73,6 @@ public class HomeFragment extends Fragment implements SensorEventListener {
 
     TextView stepcountView, kmcountView, kcalcountView, percentcountView, stopsignView, testText, randomText,
             modeNum;
-    ImageView walkcircle0, walkcircle10, walkcircle20, walkcircle50, walkcircle80, walkcircle100;
 
     MediaPlayer ready, start_sound, middle_sound, finish_sound, cheerup_sound, ww_sound, d_sound;
     CountDownTimer timer;
@@ -122,7 +122,6 @@ public class HomeFragment extends Fragment implements SensorEventListener {
 
 
         //시작 및 정지 버튼, 터치시마다 상태 변경
-        //시작 및 정지 버튼, 터치시마다 상태 변경 - bg
         startstopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -179,7 +178,7 @@ public class HomeFragment extends Fragment implements SensorEventListener {
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
         sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_UI, 0);
 
-        since_boot -= pauseDifference;
+        //since_boot -= pauseDifference;
 
         total_start = db.getTotalWithoutToday();
         total_days = db.getDays();
@@ -265,12 +264,17 @@ public class HomeFragment extends Fragment implements SensorEventListener {
         double kmcount = steps_today * 70 * 0.000001;
         double kcalcount = steps_today * 70 * 0.00001 * 40;
 
-        percentcountView.setText(percent + "%");
-        kmcountView.setText(String.format("%.2f", kmcount) + "km");
-        kcalcountView.setText(String.format("%.2f", kcalcount) + "kcal");
+        percentcountView.setText(String.valueOf(percent));
+        kmcountView.setText(String.format("%.2f", kmcount));
+        kcalcountView.setText(String.format("%.2f", kcalcount));
 
         loadPieChartData();
         //
+        //walkmod();
+
+    }
+
+    private void walkmod() {
         SharedPreferences sp = getActivity().getSharedPreferences("SharedPrefFile", Context.MODE_PRIVATE);
         modechecktf = sp.getBoolean("mode", true);
         if(modechecktf == true) {
@@ -284,8 +288,6 @@ public class HomeFragment extends Fragment implements SensorEventListener {
             modenum = 20;
             modeNum.setText(String.valueOf(modenum));
         }
-
-
 
         //이지 모드일 때
         if(modenum == 10){
@@ -371,8 +373,8 @@ public class HomeFragment extends Fragment implements SensorEventListener {
                 ww_sound.setLooping(false);
             }
             if(steps_today == 5000){
-               middle_sound.start();
-               middle_sound.setLooping(false);
+                middle_sound.start();
+                middle_sound.setLooping(false);
             }
             if(steps_today == 6000){
                 cheerup_sound.start();
@@ -392,8 +394,8 @@ public class HomeFragment extends Fragment implements SensorEventListener {
             }
 
 
-        //다이어트 모드일 때
-        else if(modenum == 20) {
+            //다이어트 모드일 때
+            else if(modenum == 20) {
 
 //            //사운드
 //            d_sound = create(getActivity(), R.raw.diet_sound);
@@ -409,7 +411,6 @@ public class HomeFragment extends Fragment implements SensorEventListener {
 //            }; timer.start();
             }
         }
-
     }
 
     private void setupPieChart() {

@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
@@ -26,6 +27,8 @@ public class MainActivity extends FragmentActivity {
     FrameLayout popup;
     FrameLayout f_main;
     TextView skipText;
+    // 나중에 지워주세요 - N
+    TextView resultText;
 
     private Fragment homeFragment, chartFragment, settingsFragment;
     private ViewPager2 sliderViewPager; //recyclerView를 기반으로 만들어진 위젯
@@ -67,6 +70,18 @@ public class MainActivity extends FragmentActivity {
         });
 
         setupIndicators(images.length);
+
+
+        // 나중에 지워주세요 - N
+        resultText = (TextView) findViewById(R.id.resultGoText);
+        resultText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
         //건너뛰기 글자 누를 시

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativelayout"
@@ -32,6 +31,13 @@
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
+            <TextView
+                android:id="@+id/resultGoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="result" />
+
         </LinearLayout>
 
         <include
@@ -54,7 +60,7 @@
             android:background="@color/tab_tab2"
             app:bb_activeTabColor="#385D6E"
             app:bb_inActiveTabColor="#FFFFFF"
-            app:bb_tabXmlResource="@xml/topbar_tabs" >
+            app:bb_tabXmlResource="@xml/topbar_tabs">
 
         </com.roughike.bottombar.BottomBar>
 

@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +38,7 @@ public class ResultActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_result);
 
         //액션바 감추기
@@ -50,7 +52,7 @@ public class ResultActivity extends AppCompatActivity {
         finalRpercent = findViewById(R.id.Result_per);
         finalRkcal = findViewById(R.id.Result_kcal);
 
-        RpieChart = (PieChart) findViewById(R.id.activity_main_piechart);
+        RpieChart = (PieChart) findViewById(R.id.activity_result_piechart);
 
         Database rdb = Database.getInstance(this);
         RtodayOffset = rdb.getSteps(Util.getToday());
@@ -63,13 +65,13 @@ public class ResultActivity extends AppCompatActivity {
         double kmcount = Rsteps_today * 70 * 0.000001;
         double kcalcount = Rsteps_today * 70 * 0.00001 * 40;
         finalSteps.setText(formatter.format(Rsteps_today));
-        finalRkm.setText(String.format("%.2f",kmcount)+"km");
-        finalRpercent.setText(percent+"%");
-        finalRkcal.setText(String.format("%.2f",kcalcount)+"kcal");
+        finalRkm.setText(String.format("%.2f",kmcount));
+        finalRpercent.setText(String.valueOf(percent));
+        finalRkcal.setText(String.format("%.2f",kcalcount));
 
         //메인 화면으로 돌아가기
-        Button returnbutton = (Button) findViewById(R.id.returnbutton);
-        returnbutton.setOnClickListener(new View.OnClickListener() {
+        Button return_button = (Button) findViewById(R.id.returnButton);
+        return_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 finish();
             }
