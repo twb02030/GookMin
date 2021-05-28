@@ -3,6 +3,7 @@ package com.example.ptsupport;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -82,11 +83,13 @@ public class HomeFragment extends Fragment implements SensorEventListener {
     String MODE1 = "EASY";
     String MODE2 = "DIET";
 
-    private int walkways[];
-    private int starts[];
-    private int middles[];
-    private int finishs[];
-    private int cheerups[];
+//    int walkways[];
+//    int starts[];
+//    int middles[];
+//    int finishs[];
+//    int cheerups[];
+
+    int[] walkways, starts, middles, finishs, cheerups;
 
     protected static boolean checknowSteps;
     private static boolean modechecktf;
@@ -139,8 +142,6 @@ public class HomeFragment extends Fragment implements SensorEventListener {
             public void onInitializationComplete(InitializationStatus initializationStatus) {}
         });
         loadAd();
-
-        ready = create(getActivity(), R.raw.ready);
 
         return v;
     }
@@ -267,6 +268,12 @@ public class HomeFragment extends Fragment implements SensorEventListener {
         percentcountView.setText(String.valueOf(percent));
         kmcountView.setText(String.format("%.2f", kmcount));
         kcalcountView.setText(String.format("%.2f", kcalcount));
+
+//        ready = create(getActivity(), R.raw.ready);
+//        if(steps_today == 0) {
+//            ready.start();
+//            ready.setLooping(false);
+//        }
 
         loadPieChartData();
         //
@@ -527,14 +534,17 @@ public class HomeFragment extends Fragment implements SensorEventListener {
 
     //미구현, 테스트용 코드, 터치 시 최종결과창 클래스 불러옴
     public void confirmbutton() {
-        if (steps_today >= DEFAULT_GOAL) {
-            Intent intent = new Intent(getActivity(), ResultActivity.class);
-            startActivity(intent);
-        } else {
-            showInterstitial();
-            Intent intent = new Intent(getActivity(), ResultActivity.class);
-            startActivity(intent);
+        if(!checknowSteps) {
+            if (steps_today >= DEFAULT_GOAL) {
+                Intent intent = new Intent(getActivity(), ResultActivity.class);
+                startActivity(intent);
+            } else {
+                showInterstitial();
+                Intent intent = new Intent(getActivity(), ResultActivity.class);
+                startActivity(intent);
+            }
         }
+
     }
 
     private void showInterstitial() {
