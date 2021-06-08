@@ -1,5 +1,6 @@
 package com.example.ptsupport;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -171,7 +172,6 @@ public class HomeFragment extends Fragment implements SensorEventListener {
 
         goal = prefs.getInt("goal", DEFAULT_GOAL);
         checknowSteps = prefs.getBoolean("check", true); //check 키의 값을 불러옴, 해당하는 값이 없으면 기본값인 true로 설정
-
         since_boot = db.getCurrentSteps();
         int pauseDifference = since_boot - prefs.getInt("pauseCount", since_boot);
 
@@ -179,7 +179,7 @@ public class HomeFragment extends Fragment implements SensorEventListener {
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
         sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_UI, 0);
 
-        //since_boot -= pauseDifference;
+        since_boot -= pauseDifference;
 
         total_start = db.getTotalWithoutToday();
         total_days = db.getDays();
@@ -199,8 +199,7 @@ public class HomeFragment extends Fragment implements SensorEventListener {
             edit.putBoolean("check", true); //check 키에 true 값을 넣는다
             edit.commit();
             startstopButton.setText("STOP");
-//            ready.start();
-            //startstopButton.setBackgroundColor(Color.RED);
+            startstopButton.setTextColor(Color.BLACK);
             stopsignView.setVisibility(View.GONE);
             Toast.makeText(getActivity(), "만보기 기록 중입니다.", Toast.LENGTH_SHORT).show();
 //            if(steps_today < 10000)
@@ -212,7 +211,7 @@ public class HomeFragment extends Fragment implements SensorEventListener {
             edit.putBoolean("check", false); //check 키에 false 값을 넣는다
             edit.commit();
             startstopButton.setText("START");
-            //startstopButton.setBackgroundColor(Color.BLUE);
+            startstopButton.setTextColor(Color.BLACK);
             stopsignView.setVisibility(View.VISIBLE);
             Toast.makeText(getActivity(), "만보기 기록이 일시정지되었습니다.", Toast.LENGTH_SHORT).show();
         }
@@ -245,7 +244,7 @@ public class HomeFragment extends Fragment implements SensorEventListener {
                 // no values for today
                 // we dont know when the reboot was, so set todays steps to 0 by
                 // initializing them with -STEPS_SINCE_BOOT
-                todayOffset = (int) event.values[0];
+                todayOffset = -(int) event.values[0]; //20210605 수정 -
                 Database db = Database.getInstance(getActivity());
                 db.insertNewDay(Util.getToday(), (int) event.values[0]);
                 db.close();

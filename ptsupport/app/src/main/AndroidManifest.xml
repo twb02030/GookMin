@@ -9,7 +9,7 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/app_ic_background"
-        android:label="GookMin"
+        android:label="코칭 만보기"
         android:roundIcon="@mipmap/app_ic_background_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Ptsupport">

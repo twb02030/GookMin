@@ -29,10 +29,23 @@
         class="com.github.mikephil.charting.charts.PieChart"
         android:layout_width="0dp"
         android:layout_height="350dp"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="90dp"
         eaze:layout_constraintEnd_toEndOf="parent"
         eaze:layout_constraintHorizontal_bias="0.0"
         eaze:layout_constraintStart_toStartOf="parent"
+        eaze:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/piechartCFsteps"
+        android:layout_width="113dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="250dp"
+        android:text="10000"
+        android:textAlignment="center"
+        android:textColor="#48CD22"
+        android:textSize="35dp"
+        eaze:layout_constraintEnd_toEndOf="@+id/piechartCF"
+        eaze:layout_constraintStart_toStartOf="@+id/piechartCF"
         eaze:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -55,6 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="88dp"
         android:text="합계"
+        android:textColor="#000000"
         eaze:layout_constraintBottom_toTopOf="@+id/chart_bargraph"
         eaze:layout_constraintEnd_toEndOf="parent"
         eaze:layout_constraintTop_toBottomOf="@+id/avg_count"
@@ -75,25 +89,12 @@
         eaze:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/piechartCFsteps"
-        android:layout_width="113dp"
-        android:layout_height="50dp"
-        android:textAlignment="center"
-        android:textColor="#48CD22"
-        android:textSize="35dp"
-        android:layout_marginTop="143dp"
-        android:text="10000"
-        eaze:layout_constraintEnd_toEndOf="parent"
-        eaze:layout_constraintHorizontal_bias="0.498"
-        eaze:layout_constraintStart_toStartOf="parent"
-        eaze:layout_constraintTop_toTopOf="@+id/piechartCF" />
-
-    <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
         android:text="평균"
+        android:textColor="#000000"
         eaze:layout_constraintBottom_toTopOf="@+id/chart_bargraph"
         eaze:layout_constraintStart_toStartOf="parent"
         eaze:layout_constraintTop_toBottomOf="@+id/avg_count"
