@@ -8,6 +8,40 @@
     tools:context=".MainActivity">
 
     <FrameLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <com.roughike.bottombar.BottomBar
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/tab_tab2"
+            app:bb_activeTabColor="#385D6E"
+            app:bb_inActiveTabColor="#FFFFFF"
+            app:bb_tabXmlResource="@xml/topbar_tabs">
+
+        </com.roughike.bottombar.BottomBar>
+
+    </FrameLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/bannerad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </com.google.android.gms.ads.AdView>
+
+    <FrameLayout
         android:id="@+id/frame_popup"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -47,39 +81,5 @@
             android:layout_height="match_parent" />
 
     </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/contentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="invisible">
-
-        <com.roughike.bottombar.BottomBar
-            android:id="@+id/topBar"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/tab_tab2"
-            app:bb_activeTabColor="#385D6E"
-            app:bb_inActiveTabColor="#FFFFFF"
-            app:bb_tabXmlResource="@xml/topbar_tabs">
-
-        </com.roughike.bottombar.BottomBar>
-
-    </FrameLayout>
-
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/bannerad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:visibility="visible"
-        app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
